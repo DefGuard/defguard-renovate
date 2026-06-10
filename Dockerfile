@@ -46,7 +46,13 @@ RUN cargo install --locked --bin defguard --path ./crates/defguard --root /build
 FROM public.ecr.aws/docker/library/debian:13-slim
 # TEMPORARY FIX: The parent image has a snapshot of debian sources that has a security vulnerability. This is a temporary fix until the parent image is updated.
 # Remove this once the parent image is updated with the latest debian sources.
-RUN sed -i \
+# CACHEBUST is passed a unique value per CI build (e.g. the workflow run id) so this
+# security-upgrade layer is never served from a stale registry cache. Without it the
+# cache key for this RUN never changes between builds and `apt-get upgrade` would keep
+# shipping whatever package versions existed when the layer was first cached.
+ARG CACHEBUST=0
+RUN echo "cache bust: ${CACHEBUST}" && \
+    sed -i \
         -e 's|snapshot\.debian\.org/archive/debian/[^/]*/|deb.debian.org/debian/|g' \
         -e 's|snapshot\.debian\.org/archive/debian-security/[^/]*/|security.debian.org/debian-security/|g' \
         /etc/apt/sources.list.d/debian.sources && \
