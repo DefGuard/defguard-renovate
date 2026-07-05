@@ -1,0 +1,12 @@
+name: ci-workflows integration probe
+
+# Temporary workflow verifying that defguard can call defguard/ci-workflows
+# reusable workflows. Remove once the first real caller (rehearsal) is wired up.
+on:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    uses: defguard/ci-workflows/.github/workflows/hello-world.yml@v1
+    with:
+      message: "Caller probe from defguard - ci-workflows caller pattern verified"
