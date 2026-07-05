@@ -4,6 +4,8 @@ name: ci-workflows integration probe
 # reusable workflows. Remove once the first real caller (rehearsal) is wired up.
 on:
   workflow_dispatch:
+  push:
+    branches: [ci/bootstrap-ci-workflows]
 
 jobs:
   hello:
