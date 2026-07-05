@@ -1,6 +1,5 @@
 name: ci-workflows integration probe
 
-
 # Temporary workflow verifying that defguard can call defguard/ci-workflows
 # reusable workflows. Remove once the first real caller (rehearsal) is wired up.
 on:
