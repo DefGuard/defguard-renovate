@@ -91,7 +91,7 @@ uaparser = "0.6"
 lettre.workspace = true
 pulldown-cmark.workspace = true
 css-inline = "0.21"
-image = "0.25" # match with qrforge
+image = "0.25.1" # match with qrforge
 mrml = "6.0"
 qrforge = { version = "0.1", default-features = false, features = ["image"] }
 
