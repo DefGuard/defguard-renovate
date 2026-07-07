@@ -54,7 +54,7 @@ clap = { version = "4.5", features = ["derive", "env"] }
 futures = "0.3"
 http = "1.4"
 hyper-rustls = { version = "0.27", features = ["http2"] }
-humantime = "2.1"
+humantime = "2.2.0"
 # match version used by sqlx
 ipnetwork = "0.20"
 jsonwebkey = { version = "0.4", features = ["pkcs-convert"] }
