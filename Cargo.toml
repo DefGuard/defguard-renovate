@@ -142,7 +142,7 @@ webauthn-authenticator-rs = "0.5"
 webauthn-rs = { version = "0.5", features = [
     "danger-allow-state-serialisation",
 ] }
-webauthn-rs-proto = "0.5"
+webauthn-rs-proto = "0.5.1"
 x25519-dalek = { version = "2.0", features = ["static_secrets"] }
 x509-parser = "0.18"
 
