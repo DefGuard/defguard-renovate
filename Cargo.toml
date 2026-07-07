@@ -42,7 +42,7 @@ axum-extra = { version = "0.12", features = [
     "typed-header",
     "query",
 ] }
-base32 = "0.5"
+base32 = "0.5.1"
 base64 = "0.22"
 bytes = { version = "1.11.1", features = ["serde"] }
 chrono = { version = "0.4", default-features = false, features = [
