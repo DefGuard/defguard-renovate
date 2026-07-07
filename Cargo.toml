@@ -87,7 +87,7 @@ rustls = { version = "0.23", features = ["ring"] }
 rustls-pki-types = "1.14"
 semver = { version = "1.0", features = ["serde"] }
 secrecy = { version = "0.10", features = ["serde"] }
-serde = { version = "1.0", features = ["derive"] }
+serde = { version = "1.0.1", features = ["derive"] }
 # match version from webauthn-rs-core
 serde_cbor = { version = "0.13", package = "serde_cbor_2" }
 serde_json = "1.0"
