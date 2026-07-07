@@ -15,6 +15,6 @@ rustls.workspace = true
 thiserror.workspace = true
 tokio.workspace = true
 tonic.workspace = true
-tower-service = "0.3"
+tower-service = "0.3.1"
 x509-parser.workspace = true
 tracing.workspace = true

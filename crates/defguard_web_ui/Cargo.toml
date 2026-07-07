@@ -9,5 +9,5 @@ rust-version.workspace = true
 
 [dependencies]
 axum.workspace = true
-mime_guess = "2.0"
+mime_guess = "2.0.1"
 rust-embed = { version = "8.11", default-features = false, features = ["include-exclude"] }
