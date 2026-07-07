@@ -1079,7 +1079,7 @@ dependencies = [
  "clap",
  "ed25519-dalek",
  "humantime",
- "ipnetwork",
+ "ipnetwork 0.21.1",
  "jsonwebtoken",
  "matches",
  "model_derive",
@@ -1121,7 +1121,7 @@ dependencies = [
  "defguard_web_ui",
  "humantime",
  "hyper-util",
- "ipnetwork",
+ "ipnetwork 0.21.1",
  "jsonwebkey",
  "jsonwebtoken",
  "ldap3",
@@ -2479,6 +2479,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "ipnetwork"
+version = "0.21.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cf370abdafd54d13e54a620e8c3e1145f28e46cc9d704bc6d94414559df41763"
+
+[[package]]
 name = "iri-string"
 version = "0.7.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3075,7 +3081,7 @@ version = "5.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "51e219e79014df21a225b1860a479e2dcd7cbd9130f4defd4bd0e191ea31d67d"
 dependencies = [
- "base64 0.21.7",
+ "base64 0.22.1",
  "chrono",
  "getrandom 0.2.17",
  "http",
@@ -3596,7 +3602,7 @@ dependencies = [
  "aes-gcm",
  "aes-kw",
  "argon2",
- "base64 0.21.7",
+ "base64 0.22.1",
  "bitfields",
  "block-padding",
  "blowfish",
@@ -4955,7 +4961,7 @@ dependencies = [
  "hashbrown 0.15.5",
  "hashlink",
  "indexmap 2.14.0",
- "ipnetwork",
+ "ipnetwork 0.20.0",
  "log",
  "memchr",
  "native-tls",
@@ -5076,7 +5082,7 @@ dependencies = [
  "hkdf",
  "hmac",
  "home",
- "ipnetwork",
+ "ipnetwork 0.20.0",
  "itoa",
  "log",
  "md-5",
@@ -6378,7 +6384,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.48.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
