@@ -51,7 +51,7 @@ jobs:
           echo "$GITHUB_WORKSPACE/.cargo/bin"           >> $GITHUB_PATH
 
       - name: Cache cargo registry
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         with:
           path: |
             ${{ env.CARGO_HOME }}/registry/index
@@ -129,7 +129,7 @@ jobs:
           echo "$GITHUB_WORKSPACE/.cargo/bin"           >> $GITHUB_PATH
 
       - name: Cache cargo registry
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         with:
           path: |
             ${{ env.CARGO_HOME }}/registry/index
@@ -185,7 +185,7 @@ jobs:
 
     services:
       postgres:
-        image: public.ecr.aws/docker/library/postgres:17-alpine
+        image: public.ecr.aws/docker/library/postgres:18-alpine
         env:
           POSTGRES_DB: defguard
           POSTGRES_USER: defguard
@@ -215,7 +215,7 @@ jobs:
           fetch-depth: 1
 
       - name: Download test archive
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
         with:
           name: nextest-archive
 
@@ -246,7 +246,7 @@ jobs:
           fetch-depth: 1
 
       - name: Download test archive
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
         with:
           name: nextest-archive
 
@@ -254,7 +254,7 @@ jobs:
         run: curl -LsSf https://get.nexte.st/latest/linux | tar zxf -
 
       - name: Log in to ghcr.io
-        uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3
+        uses: docker/login-action@af1e73f918a031802d376d3c8bbc3fe56130a9b0 # v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -298,7 +298,7 @@ jobs:
       actions: write
     steps:
       - name: Delete test archive artifact
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         with:
           script: |
             const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
