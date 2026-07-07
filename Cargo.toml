@@ -84,7 +84,7 @@ reqwest = { version = "0.12", features = ["json"] }
 rsa = "0.9"
 rust-ini = "0.21"
 rustls = { version = "0.23", features = ["ring"] }
-rustls-pki-types = "1.14"
+rustls-pki-types = "1.14.1"
 semver = { version = "1.0", features = ["serde"] }
 secrecy = { version = "0.10", features = ["serde"] }
 serde = { version = "1.0", features = ["derive"] }
