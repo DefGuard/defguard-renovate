@@ -144,7 +144,7 @@ webauthn-rs = { version = "0.5", features = [
 ] }
 webauthn-rs-proto = "0.5"
 x25519-dalek = { version = "2.0", features = ["static_secrets"] }
-x509-parser = "0.18"
+x509-parser = "0.18.1"
 
 [profile.release]
 codegen-units = 1
