@@ -122,7 +122,7 @@ jobs:
               mirrors = ["dockerhub-proxy.teonite.net"]
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
         with:
           # FIXME: temporarily pinned because of https://github.com/pnpm/pnpm/pull/9959
           version: 10.17

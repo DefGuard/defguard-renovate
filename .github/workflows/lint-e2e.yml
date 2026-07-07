@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: "./e2e/.nvmrc"
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v5
         with:
           # FIXME: temporarily pinned because of https://github.com/pnpm/pnpm/pull/9959
           version: 10.17
