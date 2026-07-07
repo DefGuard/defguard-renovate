@@ -84,7 +84,7 @@ webauthn-rs-proto.workspace = true
 x25519-dalek.workspace = true
 # extra
 ammonia = "4.1"
-async-stream = "0.3"
+async-stream = "0.3.1"
 regex = "1.10"
 uaparser = "0.6"
 # mail
