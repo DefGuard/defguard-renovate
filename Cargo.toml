@@ -85,7 +85,7 @@ rsa = "0.9"
 rust-ini = "0.21"
 rustls = { version = "0.23", features = ["ring"] }
 rustls-pki-types = "1.14"
-semver = { version = "1.0", features = ["serde"] }
+semver = { version = "1.0.1", features = ["serde"] }
 secrecy = { version = "0.10", features = ["serde"] }
 serde = { version = "1.0", features = ["derive"] }
 # match version from webauthn-rs-core
