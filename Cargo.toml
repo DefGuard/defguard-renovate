@@ -111,7 +111,7 @@ ssh-key = "0.6"
 struct-patch = { version = "0.12", default-features = false, features = ["nesting"] }
 strum = { version = "0.28", features = ["derive"] }
 strum_macros = "0.28"
-tera = "1.20"
+tera = "2.0"
 thiserror = "2.0"
 # match axum-extra -> cookies
 time = { version = "0.3", default-features = false }
@@ -149,7 +149,7 @@ webauthn-rs = { version = "0.5", features = [
     "danger-allow-state-serialisation",
 ] }
 webauthn-rs-proto = "0.5"
-x25519-dalek = { version = "2.0", features = ["static_secrets"] }
+x25519-dalek = { version = "3.0", features = ["static_secrets"] }
 x509-parser = "0.18"
 
 [profile.release]
