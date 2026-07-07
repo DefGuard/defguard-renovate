@@ -59,7 +59,7 @@
     "fuse.js": "^7.1.0",
     "get-text-width": "^1.0.3",
     "hex-rgb": "^5.0.0",
-    "html-react-parser": "^5.2.17",
+    "html-react-parser": "^6.0.0",
     "humanize-duration": "^3.33.2",
     "ipaddr.js": "^2.3.0",
     "itertools": "^2.6.0",
