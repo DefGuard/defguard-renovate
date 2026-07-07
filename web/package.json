@@ -122,7 +122,7 @@
     "concurrently": "^9.2.1",
     "dotenv": "^17.3.1",
     "esbuild": "^0.25.12",
-    "globals": "^16.5.0",
+    "globals": "^17.0.0",
     "postcss": "^8.5.8",
     "prettier": "^3.8.1",
     "sass": "~1.70.0",
