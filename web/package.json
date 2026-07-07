@@ -97,7 +97,7 @@
     "text-case": "^1.2.10",
     "typesafe-i18n": "^5.27.1",
     "use-breakpoint": "^4.0.10",
-    "zod": "^3.25.76",
+    "zod": "^4.0.0",
     "zustand": "^5.0.11"
   },
   "devDependencies": {
