@@ -67,7 +67,7 @@ lettre = { version = "0.11", default-features = false, features = [
 ] }
 matches = "0.1"
 md4 = "0.10"
-openidconnect = { version = "4.0", default-features = false, features = [
+openidconnect = { version = "4.0.1", default-features = false, features = [
     "reqwest",
 ] }
 os_info = "3.15"
