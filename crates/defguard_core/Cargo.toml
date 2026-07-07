@@ -107,7 +107,7 @@ reqwest = { version = "0.12", features = [
     "rustls-tls",
     "stream",
 ], default-features = false }
-serde_qs = "1.0"
+serde_qs = "1.1.0"
 tower.workspace = true
 webauthn-authenticator-rs = { version = "0.5", features = ["softpasskey"] }
 
