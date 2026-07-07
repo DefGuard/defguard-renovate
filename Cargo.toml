@@ -25,7 +25,7 @@ model_derive = { path = "./crates/model_derive", version = "0.0.0" }
 anyhow = "1.0"
 argon2 = { version = "0.5", features = ["std"] }
 axum = "0.8"
-axum-client-ip = "0.7"
+axum-client-ip = "1.0"
 axum-extra = { version = "0.10", features = [
     "cookie-private",
     "typed-header",
