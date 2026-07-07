@@ -25,7 +25,7 @@ model_derive = { path = "./crates/model_derive", version = "0.0.0" }
 anyhow = "1.0"
 argon2 = { version = "0.5", features = ["std"] }
 axum = "0.8"
-axum-client-ip = "0.7"
+axum-client-ip = "1.0"
 axum-extra = { version = "0.10", features = [
     "cookie-private",
     "typed-header",
@@ -82,7 +82,7 @@ ssh-key = "0.6"
 struct-patch = "0.10"
 strum = { version = "0.27", features = ["derive"] }
 strum_macros = "0.27"
-tera = "1.20"
+tera = "2.0"
 thiserror = "2.0"
 # match axum-extra -> cookies
 time = { version = "0.3", default-features = false }
@@ -118,7 +118,7 @@ webauthn-rs = { version = "0.5", features = [
     "danger-allow-state-serialisation",
 ] }
 webauthn-rs-proto = "0.5"
-x25519-dalek = { version = "2.0", features = ["static_secrets"] }
+x25519-dalek = { version = "3.0", features = ["static_secrets"] }
 
 [profile.release]
 codegen-units = 1

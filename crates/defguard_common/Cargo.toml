@@ -14,7 +14,7 @@ anyhow.workspace = true
 base64.workspace = true
 chrono.workspace = true
 clap.workspace = true
-ed25519-dalek = { version = "2.2", features = ["rand_core"] }
+ed25519-dalek = { version = "3.0", features = ["rand_core"] }
 humantime.workspace = true
 ipnetwork.workspace = true
 jsonwebtoken.workspace = true
@@ -36,4 +36,4 @@ uuid.workspace = true
 matches.workspace = true
 
 [build-dependencies]
-vergen-git2 = { version = "9.1", features = ["build"] }
+vergen-git2 = { version = "10.0", features = ["build"] }
