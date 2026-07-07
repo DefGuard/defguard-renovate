@@ -86,7 +86,7 @@ rust-ini = "0.21"
 rustls = { version = "0.23", features = ["ring"] }
 rustls-pki-types = "1.14"
 semver = { version = "1.0", features = ["serde"] }
-secrecy = { version = "0.10", features = ["serde"] }
+secrecy = { version = "0.10.1", features = ["serde"] }
 serde = { version = "1.0", features = ["derive"] }
 # match version from webauthn-rs-core
 serde_cbor = { version = "0.13", package = "serde_cbor_2" }
