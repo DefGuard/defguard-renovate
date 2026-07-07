@@ -45,7 +45,7 @@ jobs:
           echo "E2E tests will run on IMAGE_TAG=$IMAGE_TAG"
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version-file: "./e2e/.nvmrc"
 
