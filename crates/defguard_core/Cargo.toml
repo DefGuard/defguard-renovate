@@ -84,30 +84,30 @@ webauthn-rs-proto.workspace = true
 x25519-dalek.workspace = true
 # extra
 ammonia = "4.1"
-async-stream = "0.3"
-regex = "1.10"
-uaparser = "0.6"
+async-stream = "0.3.1"
+regex = "1.10.1"
+uaparser = "0.6.1"
 # mail
 lettre.workspace = true
 pulldown-cmark.workspace = true
 css-inline = "0.21"
-image = "0.25" # match with qrforge
-mrml = "6.0"
+image = "0.25.1" # match with qrforge
+mrml = "6.0.1"
 qrforge = { version = "0.1", default-features = false, features = ["image"] }
 
 [dev-dependencies]
 claims.workspace = true
-hyper-util = "0.1"
-lber = "0.5"
+hyper-util = "0.1.1"
+lber = "0.5.1"
 matches.workspace = true
-reqwest = { version = "0.12", features = [
+reqwest = { version = "0.12.1", features = [
     "cookies",
     "json",
     "multipart",
     "rustls-tls",
     "stream",
 ], default-features = false }
-serde_qs = "1.0"
+serde_qs = "1.1.0"
 tower.workspace = true
 webauthn-authenticator-rs = { version = "0.5", features = ["softpasskey"] }
 
