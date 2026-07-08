@@ -53,7 +53,7 @@ jobs:
     steps:
       - name: Create GitHub release
         id: release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           draft: true
@@ -99,36 +99,36 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
 
       - name: Setup `packer`
-        uses: hashicorp/setup-packer@main
+        uses: hashicorp/setup-packer@d35a1081606bd4ed9b39fed06d7e266efae0a5f1 # main
         id: setup
 
       - name: Install Rust stable
-        uses: actions-rs/toolchain@v1
+        uses: actions-rs/toolchain@16499b5e05bf2e26879000db0c1d13f7e13fa3af # v1
         with:
           toolchain: 1.89.0 # "stable" causes rust-lld: error on aarch64-linux
           target: ${{ matrix.target }}
           override: true
 
       - name: Set up Docker BuildX
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
         with:
           buildkitd-config-inline: |
             [registry."docker.io"]
               mirrors = ["dockerhub-proxy.teonite.net"]
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
         with:
           # FIXME: temporarily pinned because of https://github.com/pnpm/pnpm/pull/9959
           version: 10.17
 
       - name: Use Node.js 24
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 24
 
@@ -141,7 +141,7 @@ jobs:
         working-directory: web
 
       - name: Build release binary
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@844f36862e911db73fe0815f00a4a2602c279505 # v1
         with:
           use-cross: true
           command: build
@@ -151,7 +151,7 @@ jobs:
         run: mv target/${{ matrix.target }}/release/defguard defguard-${{ github.ref_name }}-${{ matrix.target }}
 
       - name: Tar
-        uses: a7ul/tar-action@v1.1.0
+        uses: a7ul/tar-action@6b2b13625a2e286a0a04950810139961bf8ce00d # v1.1.0
         with:
           command: c
           files: |
@@ -159,7 +159,7 @@ jobs:
           outPath: defguard-${{ github.ref_name }}-${{ matrix.target }}.tar.gz
 
       - name: Upload release archive
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5 # v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -170,14 +170,14 @@ jobs:
 
       - name: Build DEB package
         if: matrix.build == 'linux'
-        uses: defGuard/fpm-action@main
+        uses: defGuard/fpm-action@ebb2575fbb892876fbdd326bb6d12524fbd7398c # main
         with:
           fpm_args: "defguard-${{ github.ref_name }}-${{ matrix.target }}=/usr/bin/defguard defguard.service=/usr/lib/systemd/system/defguard.service .env-template=/etc/defguard/core.conf"
           fpm_opts: "--architecture ${{ matrix.arch }} --debug --output-type deb --version ${{ env.VERSION }} --package defguard-${{ env.VERSION }}-${{ matrix.target }}.deb"
 
       - name: Upload DEB
         if: matrix.build == 'linux'
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5 # v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -188,14 +188,14 @@ jobs:
 
       - name: Build RPM package
         if: matrix.build == 'linux'
-        uses: defGuard/fpm-action@main
+        uses: defGuard/fpm-action@ebb2575fbb892876fbdd326bb6d12524fbd7398c # main
         with:
           fpm_args: "defguard-${{ github.ref_name }}-${{ matrix.target }}=/usr/bin/defguard defguard.service=/usr/lib/systemd/system/defguard.service .env-template=/etc/defguard/core.conf"
           fpm_opts: "--architecture ${{ matrix.arch }} --debug --output-type rpm --version ${{ env.VERSION }} --package defguard-${{ env.VERSION }}-${{ matrix.target }}.rpm"
 
       - name: Upload RPM
         if: matrix.build == 'linux'
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5 # v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -206,14 +206,14 @@ jobs:
 
       - name: Build FreeBSD package
         if: matrix.build == 'freebsd'
-        uses: defGuard/fpm-action@main
+        uses: defGuard/fpm-action@ebb2575fbb892876fbdd326bb6d12524fbd7398c # main
         with:
           fpm_args: "defguard-${{ github.ref_name }}-${{ matrix.target }}=/usr/local/bin/defguard defguard.service.freebsd=/usr/local/etc/rc.d/defguard"
           fpm_opts: "--architecture ${{ matrix.arch }} --debug --output-type freebsd --version ${{ env.VERSION }} --package defguard-${{ env.VERSION }}_${{ matrix.target }}.pkg --freebsd-osversion '*' --depends openssl"
 
       - name: Upload FreeBSD
         if: matrix.build == 'freebsd'
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5 # v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

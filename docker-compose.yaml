@@ -41,7 +41,7 @@ services:
       - NET_ADMIN
 
   db:
-    image: postgres:17-alpine
+    image: postgres:17-alpine@sha256:67f624a4ad70edba8d65c82341124fab7054b277b4f7dea4b04be6f939ce2314
     environment:
       POSTGRES_DB: defguard
       POSTGRES_USER: defguard
@@ -75,7 +75,7 @@ services:
       - "8001:8001"
 
   logstash:
-    image: docker.elastic.co/logstash/logstash:8.14.0
+    image: docker.elastic.co/logstash/logstash:8.14.0@sha256:7918f95b42c5d560b09d1c3017deaee0b741199f8a607914dba1be36c8665797
     profiles:
       - observability
     ports:

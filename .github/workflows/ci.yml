@@ -23,11 +23,11 @@ jobs:
     runs-on:
       - codebuild-defguard-core-runner-${{ github.run_id }}-${{ github.run_attempt }}
 
-    container: public.ecr.aws/docker/library/rust:1
+    container: public.ecr.aws/docker/library/rust:1@sha256:1f0dbad1df66647807e6952d1db85d0b2bda7606cb2139d82517e4f009967376
 
     services:
       postgres:
-        image: public.ecr.aws/docker/library/postgres:17-alpine
+        image: public.ecr.aws/docker/library/postgres:17-alpine@sha256:67f624a4ad70edba8d65c82341124fab7054b277b4f7dea4b04be6f939ce2314
         env:
           POSTGRES_DB: defguard
           POSTGRES_USER: defguard
@@ -51,7 +51,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
 
@@ -68,7 +68,7 @@ jobs:
           scanners: "vuln"
 
       - name: Cache
-        uses: Swatinem/rust-cache@v2
+        uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
 
       - name: Install protoc
         run: apt-get update && apt-get -y install protobuf-compiler
@@ -89,7 +89,7 @@ jobs:
           cargo deny check
 
       - name: Install nextest
-        uses: taiki-e/install-action@nextest
+        uses: taiki-e/install-action@3ad7ed62b9acd4b43f91777bf240fac23e489eac # nextest
 
       - name: Run tests
         run: cargo nextest run --locked --no-fail-fast
