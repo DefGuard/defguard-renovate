@@ -4,7 +4,7 @@
 # Used by `just test-ldap` (locally) and the test-ldap CI job.
 services:
   db:
-    image: public.ecr.aws/docker/library/postgres:17-alpine
+    image: public.ecr.aws/docker/library/postgres:17-alpine@sha256:67f624a4ad70edba8d65c82341124fab7054b277b4f7dea4b04be6f939ce2314
     environment:
       POSTGRES_DB: defguard
       POSTGRES_USER: defguard

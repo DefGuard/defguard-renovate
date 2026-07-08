@@ -21,7 +21,7 @@ services:
       - db
 
   db:
-    image: public.ecr.aws/docker/library/postgres:11-alpine
+    image: public.ecr.aws/docker/library/postgres:11-alpine@sha256:ea50b9fd617b66c9135816a4536cf6e0697d4eea7014a7194479c95f6edd5ef9
     environment:
       POSTGRES_DB: defguard
       POSTGRES_USER: defguard

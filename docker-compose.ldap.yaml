@@ -32,7 +32,7 @@ services:
       - NET_ADMIN
 
   db:
-    image: postgres:17-alpine
+    image: postgres:17-alpine@sha256:67f624a4ad70edba8d65c82341124fab7054b277b4f7dea4b04be6f939ce2314
     environment:
       POSTGRES_DB: defguard
       POSTGRES_USER: defguard
@@ -66,7 +66,7 @@ services:
   #     - ./configs/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
 
   openldap:
-    image: bitnamilegacy/openldap:2.6
+    image: bitnamilegacy/openldap:2.6@sha256:687f14a22b5c74fb057a57221acdbe7b8c82e2d3619fc380db3af48ec4aa04ed
     user: root
     restart: unless-stopped
     environment:

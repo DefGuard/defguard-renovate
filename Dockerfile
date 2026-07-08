@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/node:26 AS web
+FROM public.ecr.aws/docker/library/node:26@sha256:b46a10d964ad15136ebdf9012142131481caa0697d7a4d4eafe4bbabd818f876 AS web
 
 WORKDIR /app
 COPY web/package.json web/pnpm-lock.yaml web/pnpm-workspace.yaml ./
@@ -7,7 +7,7 @@ RUN pnpm install --ignore-scripts --frozen-lockfile
 COPY web/ .
 RUN pnpm build
 
-FROM public.ecr.aws/docker/library/rust:1 AS chef
+FROM public.ecr.aws/docker/library/rust:1@sha256:1f0dbad1df66647807e6952d1db85d0b2bda7606cb2139d82517e4f009967376 AS chef
 
 WORKDIR /build
 
@@ -43,7 +43,7 @@ COPY migrations migrations
 RUN cargo install --locked --bin defguard --path ./crates/defguard --root /build
 
 # run
-FROM public.ecr.aws/docker/library/debian:13-slim
+FROM public.ecr.aws/docker/library/debian:13-slim@sha256:28de0877c2189802884ccd20f15ee41c203573bd87bb6b883f5f46362d24c5c2
 # TEMPORARY FIX: The parent image has a snapshot of debian sources that has a security vulnerability. This is a temporary fix until the parent image is updated.
 # Remove this once the parent image is updated with the latest debian sources.
 RUN sed -i \

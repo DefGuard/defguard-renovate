@@ -28,7 +28,7 @@ jobs:
       - codebuild-defguard-core-runner-${{ github.run_id }}-${{ github.run_attempt }}
       - instance-size:large
 
-    container: public.ecr.aws/docker/library/rust:1
+    container: public.ecr.aws/docker/library/rust:1@sha256:1f0dbad1df66647807e6952d1db85d0b2bda7606cb2139d82517e4f009967376
 
     env:
       CARGO_TERM_COLOR: always
@@ -106,7 +106,7 @@ jobs:
       - codebuild-defguard-core-runner-${{ github.run_id }}-${{ github.run_attempt }}
       - instance-size:2xlarge
 
-    container: public.ecr.aws/docker/library/rust:1
+    container: public.ecr.aws/docker/library/rust:1@sha256:1f0dbad1df66647807e6952d1db85d0b2bda7606cb2139d82517e4f009967376
 
     env:
       CARGO_TERM_COLOR: always
@@ -176,7 +176,7 @@ jobs:
       - codebuild-defguard-core-runner-${{ github.run_id }}-${{ github.run_attempt }}
       - instance-size:large
 
-    container: public.ecr.aws/docker/library/rust:1
+    container: public.ecr.aws/docker/library/rust:1@sha256:1f0dbad1df66647807e6952d1db85d0b2bda7606cb2139d82517e4f009967376
 
     strategy:
       fail-fast: false
@@ -185,7 +185,7 @@ jobs:
 
     services:
       postgres:
-        image: public.ecr.aws/docker/library/postgres:17-alpine
+        image: public.ecr.aws/docker/library/postgres:17-alpine@sha256:67f624a4ad70edba8d65c82341124fab7054b277b4f7dea4b04be6f939ce2314
         env:
           POSTGRES_DB: defguard
           POSTGRES_USER: defguard
