@@ -2,7 +2,7 @@
   "name": "web",
   "private": true,
   "version": "0.0.1",
-  "packageManager": "pnpm@11.9.0",
+  "packageManager": "pnpm@11.11.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -30,7 +30,7 @@
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/react-virtual": "3.14.3",
     "@uidotdev/usehooks": "^2.4.1",
-    "axios": "1.17.0",
+    "axios": "1.18.0",
     "byte-size": "^9.0.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.21",

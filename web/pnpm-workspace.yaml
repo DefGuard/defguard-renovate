@@ -15,3 +15,10 @@ onlyBuiltDependencies:
   - '@swc/core'
   - esbuild
   - sharp
+minimumReleaseAgeExclude:
+  # Renovate security update: axios@1.18.0
+  - axios@1.18.0
+  # Renovate security update: pnpm@11.11.0
+  - pnpm@11.11.0
+  # Renovate security update: qs@6.16.0
+  - qs@6.16.0
