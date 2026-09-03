@@ -49,7 +49,7 @@ axum-extra = { version = "0.12", features = [
     "query",
 ] }
 base32 = "0.5"
-base64 = "0.22"
+base64 = "0.23"
 bytes = { version = "1.11.1", features = ["serde"] }
 chrono = { version = "0.4", default-features = false, features = [
     "clock",
@@ -62,7 +62,7 @@ http = "1.4"
 hyper-rustls = { version = "0.27", features = ["http2"] }
 humantime = "2.1"
 # match version used by sqlx
-ipnetwork = "0.20"
+ipnetwork = "0.21"
 jsonwebkey = { version = "0.4", features = ["pkcs-convert"] }
 jsonwebtoken = { version = "10.3", features = ["rust_crypto"] }
 ldap3 = { git = "https://github.com/DefGuard/ldap3", rev = "65ae9ad320770c63f366233ebe121534e16b59a7", features = ["tls"] }
@@ -72,21 +72,21 @@ lettre = { version = "0.11", default-features = false, features = [
     "tokio1-rustls-tls",
 ] }
 matches = "0.1"
-md4 = "0.10"
+md4 = "0.11"
 openidconnect = { version = "4.0", default-features = false, features = [
     "reqwest",
 ] }
 os_info = "3.15"
 parse_link_header = "0.4"
 paste = "1.0"
-pgp = { version = "0.19", default-features = false }
+pgp = { version = "0.20", default-features = false }
 prost = "0.14"
 prost-types = "0.14"
 pulldown-cmark = "0.13"
 # match version used by sqlx
-rand = "0.8"
+rand = "0.10"
 rcgen = { version = "0.14", features = ["x509-parser", "pem"] }
-reqwest = { version = "0.12", features = ["json"] }
+reqwest = { version = "0.13", features = ["json"] }
 rsa = "0.9"
 rust-ini = "0.21"
 rustls = { version = "0.23", features = ["ring"] }
@@ -100,7 +100,7 @@ serde_json = "1.0"
 serde_urlencoded = "0.7"
 sha-1 = "0.10"
 sha256 = "1.5"
-sqlx = { version = "0.8", features = [
+sqlx = { version = "0.9", features = [
     "chrono",
     "ipnetwork",
     "postgres",
@@ -108,7 +108,7 @@ sqlx = { version = "0.8", features = [
     "uuid",
 ] }
 ssh-key = "0.6"
-struct-patch = { version = "0.12", default-features = false, features = ["nesting"] }
+struct-patch = { version = "0.14", default-features = false, features = ["nesting"] }
 strum = { version = "0.28", features = ["derive"] }
 strum_macros = "0.28"
 tera = "1.20"
@@ -136,7 +136,7 @@ tonic-prost-build = "0.14"
 totp-lite = { version = "2.0" }
 tower = "0.5"
 tower_governor = "0.8"
-tower-http = { version = "0.6", features = ["fs", "trace", "timeout"] }
+tower-http = { version = "0.7", features = ["fs", "trace", "timeout"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 trait-variant = "0.1"
