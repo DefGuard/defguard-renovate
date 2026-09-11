@@ -29,7 +29,7 @@
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/react-virtual": "3.14.3",
     "@uidotdev/usehooks": "^2.4.1",
-    "axios": "1.17.0",
+    "axios": "1.18.0",
     "byte-size": "^9.0.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.21",
@@ -86,6 +86,6 @@
     "typescript": "~6.0.3",
     "vite": "^8.0.16",
     "vite-plugin-image-optimizer": "^2.0.3",
-    "vitest": "4.1.9"
+    "vitest": "4.1.11"
   }
 }
